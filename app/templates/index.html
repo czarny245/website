@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <a id="linktotop"></a>
+    <header class="header_container">
+      <div id="header">
+        <div class="left_head">
+          <h1 class="header_h1">Bartlomiej Szywala</h1>
+        </div>
+          <nav class="menu">
+            <a href="#linktotop">home</a>
+            <a href="#linktoprojects">projects</a>
+            <a href="#linktocontacts" >contact</a>
+          </nav>
+          <nav class="site_nav">
+            <a href="#" class="burger" onclick="toggleMenu()">
+              <label for="toggle" class="site_menu_trigger">&#9776;</label>
+            </a>
+            <div class="site_menu" id="side_menu">
+              <ul>
+                <li><a href="#linktotop">home</a></li>
+                <li><a href="#linktoprojects">projects</a></li>
+                <li><a href="#linktocontacts" >contact</a></li>
+              </ul>
+            </div>  
+          </nav>    
+      </div>
+      <div class="bg"></div>
+    </header>
+    <main>
+      <section class="upper">
+        <div class="container">
+          <h2>Full Stack Web Developer</h2>
+          <p><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>SQL</span></p>
+        </div>
+      </section>
+      <section class="projects">
+        <h2 class="projects_h2"><a id="linktoprojects">Featured Work</a></h2>
+          <ul class="project_list">
+            <li>
+              <a href="/map">
+              <div class="project">
+                <picture>
+                  <source srcset="../static/img/project1.png 300w,
+                  ../static/img/project1.png 600w,
+                  ../static/img/project1.png 1000w" type="image/jpg" 
+                                            sizes="(max-width: 800px) 80vw, 30vw">
+                  <img src="../static/img/wolf.jpg" alt="project image">
+                </picture>
+                <h2 class="project_title">Map App Project</h2>
+              </a>
+              <p>This project focuses on JavaScript. It makes use of two independent API’s:
+                GoogleMaps and Forsquare, and it is powered by Knockout.js framework. source code available <a href="https://github.com/czarny245/neighborhood_map">Here</a>
+              </p>
+              </div>
+            </li>
+            <li>
+              <a href="/catalog">
+              <div class="project">
+                <picture>
+                <source srcset="../static/img/project2.png 300w,
+                ../static/img/project2.png 600w,
+                ../static/img/project2.png 1000w" type="image/jpg"
+                                            sizes="(max-width: 800px) 80vw, 30vw">
+                  <img src="img/swine.jpg" alt="project image">
+                  </picture>
+                <h2 class="project_title">Catalog Project</h2>
+                </a>
+                <p>Item Catalog: In this project I’m showcasing my ability to launch a Python based web application.
+                  The app is powered by Flask framework, have its own database (
+                  postgresql) and supports google login API.
+                  Source code available <a href="https://github.com/czarny245/Item_Catalog">Here</a>
+                </p>
+              </div>
+            </li>
+          </ul>
+      </section>
+      <section class="contacts">
+        <a id="linktocontacts"></a>
+        <h3>Contact details</h3>
+        <ul class="contact_list">
+          <li class="row">Bartlomiej Szywala</li>
+          <li class="row">bszywala@protonmail.com</li>
+          <li class="row">E14 7FX</li>
+          <li class="row">London</li>
+          <li class="row">Tel: 07889637102</li>
+        </ul>
+      </section>
+    </main>
+    <script>
+        function toggleMenu() {
+          var menu = document.getElementById('side_menu')
+          if (menu.style.width == "250px"){
+            menu.style.width = "0px"
+          } else {
+            menu.style.width = '250px';
+          }
+        }
+      </script>
+  </body>
+</html>

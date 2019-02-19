@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Neigborhood_map</title>
+        <link rel="stylesheet" href="../static/Nstyles.css" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="nav">
+            <label data-bind="click: toggleMenu">&#9776;</label>
+        </div>
+        <div class ="container">
+            <div class="side-panel">
+                <form>
+                    <input id="input-field" type="text" data-bind="textInput: query, event: {keyup: filter}" placeholder="Search">
+                </form>
+                <ul id = "places-list" data-bind="foreach: placesList">
+                    <li data-bind="if: visible">
+                    <div class="list-item" data-bind="text: name, click: $parent.listDetails" onmouseover="" style="cursor: pointer;"></dvi>
+                    </li>
+                </ul>
+            </div>
+            <div id="map"></div>
+        </div>
+        <script src="{{url_for('static', filename='data.js')}}"></script>
+        <script src="{{url_for('static', filename='knockout-3.2.0.js')}}"></script>
+        <script src="{{url_for('static', filename='app.js')}}"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places,&key=AIzaSyBbzdbp_RmZLxLVyzxD-pOwEIfKDyGs_fg&callback=initMap" onerror="mapError()"
+        async defer></script>
+    </body>
+</html>
